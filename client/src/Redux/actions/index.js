@@ -3,7 +3,7 @@ import { GET_COUNTRIES, GET_COUNTRY_DETAIL, FILTER_BY_CONTINENT, FILTER_BY_ACTIV
 
 export function getCountries () {
     return async function(dispatch) {
-        var countries = await axios.get('http://localhost:3001/countries')
+        var countries = await axios.get('/countries')
         return dispatch({
             type: GET_COUNTRIES,
             payload: countries.data
@@ -14,7 +14,7 @@ export function getCountries () {
 export function getCountryDetail (id){
     return async function(dispatch){
         try {
-            let countryDetail = await axios.get(`http://localhost:3001/countries/${id}`)
+            let countryDetail = await axios.get(`/countries/${id}`)
             // console.log(countryDetail.data)
             return dispatch({
                 type: GET_COUNTRY_DETAIL,
@@ -29,7 +29,7 @@ export function getCountryDetail (id){
 export function getByName (name) {
     return async function (dispatch){
         try {
-            var country = await axios.get(`http://localhost:3001/countries?name=${name}`)
+            var country = await axios.get(`/countries?name=${name}`)
             return dispatch({
                 type: GET_BY_NAME,
                 payload: country.data
@@ -42,7 +42,7 @@ export function getByName (name) {
 
 export function getActivities (){
     return async function (dispatch){
-        let activities = await axios.get('http://localhost:3001/activities')
+        let activities = await axios.get('/activities')
         // console.log(activities.data)
         return dispatch({
             type: GET_ACTIVITIES,
@@ -54,7 +54,7 @@ export function getActivities (){
 
 export function createActivity (payload) {
     return async function (dispatch){
-        let activity = await axios.post('http://localhost:3001/activities', payload);
+        let activity = await axios.post('/activities', payload);
         return activity;
 }};
 
@@ -111,7 +111,7 @@ export function orderByPopulation (order) {
 
 // export function getCountryActivity(countryId){
 //     return async function(dispatch){
-//         let activity = await axios.get(`http://localhost:3001/activities/?idCountry=${country.id}`)
+//         let activity = await axios.get(`/activities/?idCountry=${country.id}`)
 //         return dispatch({
 //             type:
 //         })

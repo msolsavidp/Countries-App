@@ -1,10 +1,12 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import axios from 'axios';
 import './App.css';
 import LandingPage from './components/LandingPage/LandingPage';
 import Home from './components/Home/Home';
 import About from './components/About/About';
 import CreateActivity from './components/CreateActivity/CreateActivity';
-import CountryDetails from './components/CountryDetails/CountryDetails'
+import CountryDetails from './components/CountryDetails/CountryDetails';
+axios.defaults.baseURL = 'http://localhost:3001';
 
 
 function App() {
