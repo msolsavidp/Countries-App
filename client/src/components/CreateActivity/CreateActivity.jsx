@@ -133,6 +133,7 @@ export default function CreateActivity ({setCurrentPage}) {
                 <Form.Group className="mb-3" controlId="formDifficulty">
                     <Form.Label>Difficulty: </Form.Label>
                     <Form.Select name= 'difficulty' value={input.difficulty} onChange = {(e) => handleSelect(e)}>
+                        <option value=''>Choose one</option>
                         <option value= '1'>Super easy</option>
                         <option value= '2'>Easy</option>
                         <option value= '3'>Medium</option>
