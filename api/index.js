@@ -25,7 +25,7 @@ const { all } = require('./src/app.js');
 require('dotenv').config();
 
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
+conn.sync({ force: false }).then(() => {
   server.listen(process.env.PORT, async () => {
     //Consulto si la base de datos tiene algo
     const allCountries = await Country.findAll();
