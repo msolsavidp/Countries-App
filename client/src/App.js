@@ -6,7 +6,7 @@ import Home from './components/Home/Home';
 import About from './components/About/About';
 import CreateActivity from './components/CreateActivity/CreateActivity';
 import CountryDetails from './components/CountryDetails/CountryDetails';
-axios.defaults.baseURL = 'http://localhost:3001';
+axios.defaults.baseURL = 'https://countries-app-production-6d6e.up.railway.app/';
 
 
 function App() {
